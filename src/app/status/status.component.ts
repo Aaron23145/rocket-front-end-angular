@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RocketRestApiService } from '../rocket-rest-api.service';
+import { Response } from '../response';
 
 @Component({
   selector: 'app-status',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
+  status: Response;
 
-  constructor() { }
+  constructor(private apiService: RocketRestApiService) {}
 
   ngOnInit() {
+    this.apiService.getStatus().subscribe(status => this.status = status);
   }
-
 }

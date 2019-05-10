@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -12,6 +13,7 @@ import { StatusComponent } from './status/status.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { StartComponent } from './start/start.component';
 import { ResetComponent } from './reset/reset.component';
+import { NetworkErrorComponent } from './network-error/network-error.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { ResetComponent } from './reset/reset.component';
     StatusComponent,
     CountdownComponent,
     StartComponent,
-    ResetComponent
+    ResetComponent,
+    NetworkErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

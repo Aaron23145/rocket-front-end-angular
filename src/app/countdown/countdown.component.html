@@ -1,3 +1,15 @@
-<p>
-  countdown works!
-</p>
+<div>
+    <p *ngIf="!countdown; else success">
+      <app-network-error>
+        {{ apiService.errorMsg }}
+      </app-network-error>
+    </p>
+    <ng-template #success>
+      <div class="result-container border-box">
+        <h3>Remaining time to finish the countdown:</h3>
+        <h2>{{ countdown.message.remainingTime }}</h2>
+        <p>If you're not seeing the countdown decrease between requests is because it's in WAITING mode.</p>
+        <p>Request performed at {{ countdown.timestamp }}.</p>
+      </div>
+    </ng-template>
+  </div>
