@@ -1,5 +1,7 @@
 <div>
-    <p *ngIf="!countdown; else success">
+  <div *ngIf="loading; else loaded"></div>
+  <ng-template #loaded>
+    <p *ngIf="countdown === null; else success">
       <app-network-error>
         {{ apiService.errorMsg }}
       </app-network-error>
@@ -12,4 +14,5 @@
         <p>Request performed at {{ countdown.timestamp }}.</p>
       </div>
     </ng-template>
-  </div>
+  </ng-template>
+</div>

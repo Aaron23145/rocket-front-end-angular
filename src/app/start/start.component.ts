@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RocketRestApiService } from '../rocket-rest-api.service';
+import { Response } from '../response';
 
 @Component({
   selector: 'app-start',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
+  start: Response;
+  loading: boolean = true;
 
-  constructor() { }
+  constructor(private apiService: RocketRestApiService) {}
 
   ngOnInit() {
+    this.apiService.postStart().subscribe(start => {
+      this.start = start;
+      this.loading = false;
+    });
   }
-
 }

@@ -9,10 +9,14 @@ import { Response } from '../response';
 })
 export class StatusComponent implements OnInit {
   status: Response;
+  loading: boolean = true;
 
   constructor(private apiService: RocketRestApiService) {}
 
   ngOnInit() {
-    this.apiService.getStatus().subscribe(status => this.status = status);
+    this.apiService.getStatus().subscribe(status => {
+        this.status = status;
+        this.loading = false;
+    });
   }
 }

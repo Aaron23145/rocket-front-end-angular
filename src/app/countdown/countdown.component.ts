@@ -9,11 +9,21 @@ import { Response } from '../response';
 })
 export class CountdownComponent implements OnInit {
   countdown: Response;
+  remainingTime: number;
+  loading: boolean = true;
 
   constructor(private apiService: RocketRestApiService) { }
 
   ngOnInit() {
-    this.apiService.getCountdown().subscribe(countdown => this.countdown = countdown);
+    this.apiService.getCountdown().subscribe(countdown => {
+      this.countdown = countdown;
+      this.loading = false;
+
+      setInterval(this.reduceCountdown, 1000);
+    });
   }
 
+  reduceCountdown() {
+    this.remainingTime -= 1;
+  }
 }

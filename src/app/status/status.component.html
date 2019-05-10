@@ -1,14 +1,17 @@
 <div>
-  <p *ngIf="!status; else success">
-    <app-network-error>
-      {{ apiService.errorMsg }}
-    </app-network-error>
-  </p>
-  <ng-template #success>
-    <div class="result-container border-box">
-      <h3>Current rocket status:</h3>
-      <h2>{{ status.message }}</h2>
-      <p>Request performed at {{ status.timestamp }}.</p>
-    </div>
+  <div *ngIf="loading; else loaded"></div>
+  <ng-template #loaded>
+    <p *ngIf="status === null; else success">
+      <app-network-error>
+        {{ apiService.errorMsg }}
+      </app-network-error>
+    </p>
+    <ng-template #success>
+      <div class="result-container border-box">
+        <h3>Current rocket status:</h3>
+        <h2>{{ status.message }}</h2>
+        <p>Request performed at {{ status.timestamp }}.</p>
+      </div>
+    </ng-template>
   </ng-template>
 </div>

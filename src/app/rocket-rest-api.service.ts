@@ -19,13 +19,23 @@ export class RocketRestApiService {
     return this.http.get<Response>(`${this.baseApiUrl}/countdown`)
       .pipe(catchError(this.handleError('countdown')));
   }
-  postStart() {}
-  postReset() {}
+  postStart(): Observable<Response> {
+    return this.http.post<Response>(`${this.baseApiUrl}/start`, null)
+      .pipe(catchError(this.handleError('start')));
+  }
+  postReset(): Observable<Response> {
+    return this.http.post<Response>(`${this.baseApiUrl}/reset`, null)
+      .pipe(catchError(this.handleError('reset')))
+  }
 
   private handleError(operation: string) {
     return (error: any): Observable<null> => {
-      console.error(`Error trying to connect with the rest api. Operation failed: ${operation}`);
-      return of(null);
+      if(error.error instanceof ErrorEvent) {
+        console.error(`Error trying to connect with the rest api. Operation failed: ${operation}`);
+        return of(null);
+      } else {
+        return of(error.error);
+      }
     }
   }
 

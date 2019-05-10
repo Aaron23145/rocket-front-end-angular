@@ -1,3 +1,17 @@
-<p>
-  start works!
-</p>
+<div>
+  <div *ngIf="loading; else loaded"></div>
+  <ng-template #loaded>
+    <p *ngIf="start === null; else success">
+      <app-network-error>
+        {{ apiService.errorMsg }}
+      </app-network-error>
+    </p>
+    <ng-template #success>
+      <div class="result-container border-box">
+        <h3>Start countdown</h3>
+        <h2>{{ start.message }}</h2>
+        <p>Request performed at {{ start.timestamp }}.</p>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

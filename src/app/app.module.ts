@@ -14,6 +14,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { StartComponent } from './start/start.component';
 import { ResetComponent } from './reset/reset.component';
 import { NetworkErrorComponent } from './network-error/network-error.component';
+import { RedirectToCountdownComponent } from './redirect-to-countdown/redirect-to-countdown.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NetworkErrorComponent } from './network-error/network-error.component';
     CountdownComponent,
     StartComponent,
     ResetComponent,
-    NetworkErrorComponent
+    NetworkErrorComponent,
+    RedirectToCountdownComponent
   ],
   imports: [
     BrowserModule,

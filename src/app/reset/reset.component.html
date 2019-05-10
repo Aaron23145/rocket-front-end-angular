@@ -1,3 +1,18 @@
-<p>
-  reset works!
-</p>
+<div>
+  <div *ngIf="loading; else loaded"></div>
+  <ng-template #loaded>
+    <p *ngIf="reset === null; else success">
+      <app-network-error>
+        {{ apiService.errorMsg }}
+      </app-network-error>
+    </p>
+    <ng-template #success>
+      <div class="result-container border-box">
+        <h3>Reset countdown</h3>
+        <h2>{{ reset.message }}</h2>
+        <p>Request performed at {{ reset.timestamp }}.</p>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
+  
