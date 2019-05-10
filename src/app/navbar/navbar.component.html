@@ -1,10 +1,30 @@
 <nav>
   <div class="left-container">
-    <app-navbar-item routerLink="status">Status</app-navbar-item>
-    <app-navbar-item routerLink="redirectToCountdown">Countdown</app-navbar-item>
+    <app-navbar-item
+      routerLink="status"
+      [class.active]="router.url === '/status'"
+    >
+      Status
+    </app-navbar-item>
+    <app-navbar-item
+      routerLink="redirectToCountdown"
+      [class.active]="router.url === '/countdown'"
+    >
+      Countdown
+    </app-navbar-item>
   </div>
   <div class="right-container">
-    <app-navbar-item routerLink="start">Start</app-navbar-item>
-    <app-navbar-item routerLink="reset">Reset</app-navbar-item>
+    <app-navbar-item
+      routerLink="start"
+      [class.active]="router.url === '/start'"
+    >
+      Start
+    </app-navbar-item>
+    <app-navbar-item
+      routerLink="reset"
+      [class.active]="router.url === '/reset'"
+    >
+      Reset
+    </app-navbar-item>
   </div>
 </nav>
