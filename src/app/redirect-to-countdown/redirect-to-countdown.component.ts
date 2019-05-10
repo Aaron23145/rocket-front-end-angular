@@ -10,5 +10,7 @@ export class RedirectToCountdownComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.navigate(['/countdown']);
+  }
 }
