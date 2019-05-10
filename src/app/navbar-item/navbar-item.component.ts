@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-navbar-item',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-item.component.css']
 })
 export class NavbarItemComponent implements OnInit {
+  @Input() routerLink: string;
 
   constructor() { }
 
