@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-purple: #471363;
+  --main-dark-purple: #3c1053
+}
+
 html, body {
   height: 100%;
 }
