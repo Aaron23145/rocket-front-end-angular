@@ -1,27 +1,31 @@
-# RocketFrontEndAngular
+# Rocket Front-End Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+SPA built with Angular 7 that consumes the [Rocket Rest API](https://github.com/Aaron23145/RocketRestApi).
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Allows you to manage the countdown of the Rocket Rest API in a Single Page Application.
+- Configuration file to specify the rest api url.
+- Unit Tests.
 
-## Code scaffolding
+## Running App
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To run the app you'll need NPM (or yarn) installed. Before starting the app, make sure that you have the Rocket Rest API running and you've set its url in the application configuration file (it can be found in src/config.ts). By default, it's set to http://localhost:8080 and you may not need to edit it.
 
-## Build
+Then, run this command:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```sh
+npx ng serve --open
+```
 
-## Running unit tests
+And the browser will be opened with the app running when it has finished the compilation.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Running Tests
 
-## Running end-to-end tests
+To run the tests you'll need NPM (or yarn) installed. Then, just run the following command:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```sh
+npx ng test
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The tests result will be displayed in the console and also a browser window will be opened showing it.
