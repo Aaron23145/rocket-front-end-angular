@@ -9,8 +9,13 @@ import { backendUrl } from '../config';
   providedIn: 'root'
 })
 export class RocketRestApiService {
+  constructor(private http: HttpClient) {}
+
   baseApiUrl: string = backendUrl;
-  errorMsg: string = 'Network Error. Make sure that you have the rest api server active and that you have configured correctly the configuration file with its url. If it\'s everything configured correctly, please, try again.';
+  errorMsg: string = 'Network Error. Make sure that you have the rest api ' +
+                     'server active and that you have configured correctly ' +
+                     'the configuration file with its url. If it\'s everything ' +
+                     'configured correctly, please, try again.';
 
   getStatus(): Observable<Response> {
     return this.http.get<Response>(`${this.baseApiUrl}/status`)
@@ -39,6 +44,4 @@ export class RocketRestApiService {
       }
     }
   }
-
-  constructor(private http: HttpClient) {}
 }
