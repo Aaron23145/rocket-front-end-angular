@@ -5,15 +5,13 @@ import { StatusComponent } from './status/status.component';
 import { CountdownComponent } from './countdown/countdown.component';
 import { StartComponent } from './start/start.component';
 import { ResetComponent } from './reset/reset.component';
-import { RedirectToCountdownComponent } from './redirect-to-countdown/redirect-to-countdown.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'status', component: StatusComponent },
   { path: 'countdown', component: CountdownComponent },
   { path: 'start', component: StartComponent },
-  { path: 'reset', component: ResetComponent },
-  { path: 'redirectToCountdown', component: RedirectToCountdownComponent },
+  { path: 'reset', component: ResetComponent }
 ];
 
 @NgModule({

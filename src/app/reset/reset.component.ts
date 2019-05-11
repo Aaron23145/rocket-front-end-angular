@@ -19,5 +19,4 @@ export class ResetComponent implements OnInit {
       this.loading = false;
     });
   }
-
 }

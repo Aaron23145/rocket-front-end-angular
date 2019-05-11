@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CountdownComponent } from './countdown.component';
+import { NetworkErrorComponent } from '../network-error/network-error.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CountdownComponent', () => {
   let component: CountdownComponent;
@@ -8,7 +10,13 @@ describe('CountdownComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountdownComponent ]
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        CountdownComponent,
+        NetworkErrorComponent
+      ]
     })
     .compileComponents();
   }));

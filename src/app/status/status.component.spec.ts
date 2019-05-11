@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatusComponent } from './status.component';
+import { NetworkErrorComponent } from '../network-error/network-error.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('StatusComponent', () => {
   let component: StatusComponent;
@@ -8,7 +10,13 @@ describe('StatusComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StatusComponent ]
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        StatusComponent,
+        NetworkErrorComponent
+      ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResetComponent } from './reset.component';
+import { NetworkErrorComponent } from '../network-error/network-error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CountdownComponent } from '../countdown/countdown.component';
 
 describe('ResetComponent', () => {
   let component: ResetComponent;
@@ -8,7 +12,14 @@ describe('ResetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResetComponent ]
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        ResetComponent,
+        NetworkErrorComponent,
+        CountdownComponent
+      ]
     })
     .compileComponents();
   }));
