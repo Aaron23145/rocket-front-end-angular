@@ -18,12 +18,10 @@ export class CountdownComponent implements OnInit {
     this.apiService.getCountdown().subscribe(countdown => {
       this.countdown = countdown;
       this.loading = false;
-
-      setInterval(this.reduceCountdown, 1000);
     });
   }
 
-  reduceCountdown() {
-    this.remainingTime -= 1;
+  refresh() {
+    this.ngOnInit();
   }
 }

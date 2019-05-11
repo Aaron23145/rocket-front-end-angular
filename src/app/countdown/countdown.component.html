@@ -12,6 +12,13 @@
         <h2>{{ countdown.message.remainingTime }}</h2>
         <p>If you're not seeing the countdown decrease between requests is because it's in WAITING mode.</p>
         <p>Request performed at {{ countdown.timestamp }}.</p>
+        <p>
+          <i
+          (click)="refresh()"
+          class="fas fa-sync-alt"
+          >
+          </i>
+        </p>
       </div>
     </ng-template>
   </ng-template>

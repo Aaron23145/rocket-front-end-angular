@@ -19,4 +19,8 @@ export class StatusComponent implements OnInit {
         this.loading = false;
     });
   }
+
+  refresh() {
+    this.ngOnInit();
+  }
 }

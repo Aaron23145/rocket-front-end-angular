@@ -11,6 +11,13 @@
         <h3>Start countdown</h3>
         <h2>{{ start.message }}</h2>
         <p>Request performed at {{ start.timestamp }}.</p>
+        <p>
+          <i
+          (click)="refresh()"
+          class="fas fa-sync-alt"
+          >
+          </i>
+        </p>
       </div>
     </ng-template>
   </ng-template>
