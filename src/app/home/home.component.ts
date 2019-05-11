@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BoxContent } from '../box-content';
 
 @Component({
@@ -6,7 +6,7 @@ import { BoxContent } from '../box-content';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   boxesContent: BoxContent[] = [
     {
       title: 'Status',
@@ -33,10 +33,4 @@ export class HomeComponent implements OnInit {
       routerLink: 'reset'
     }
   ];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

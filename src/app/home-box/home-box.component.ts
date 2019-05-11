@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BoxContent } from '../box-content';
 
 @Component({
@@ -6,12 +6,6 @@ import { BoxContent } from '../box-content';
   templateUrl: './home-box.component.html',
   styleUrls: ['./home-box.component.css']
 })
-export class HomeBoxComponent implements OnInit {
+export class HomeBoxComponent {
   @Input() content: BoxContent;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }
